@@ -1,0 +1,35 @@
+# syntax=docker/dockerfile:1
+
+# Use the specified Python version
+ARG PYTHON_VERSION=3.11
+FROM python:${PYTHON_VERSION}-alpine
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Set working directory
+WORKDIR /app
+
+# Create a non-privileged user
+ARG UID=10001
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
+
+# Copy the source code into the container
+COPY . .
+
+# Set proper ownership of the application files
+RUN chown -R appuser:appuser /app
+
+# Switch to the non-privileged user to run the application
+USER appuser
+
+# Run the application
+CMD cd /app/hello_world && python hello_world.py
