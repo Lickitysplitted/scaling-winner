@@ -3,5 +3,5 @@ services:
   helloworld:
     container_name: helloworld
     build:
-      context: https://github.com/Lickitysplitted/scaling-winner.git
-      dockerfile: ./app/hello_world/dockerfile
+      context: https://github.com/Lickitysplitted/scaling-winner.git#main:app/hello_world
+      #dockerfile: ./app/hello_world/dockerfile
