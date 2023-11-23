@@ -33,4 +33,4 @@ RUN chown -R appuser:appuser /app
 USER appuser
 
 # Run the application
-CMD cd /app/hello_world && python hello_world.py
+CMD cd /app/hello_world && python -u hello_world.py
