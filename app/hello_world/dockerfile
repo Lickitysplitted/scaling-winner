@@ -8,9 +8,6 @@ FROM python:${PYTHON_VERSION}-alpine
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Set working directory
-WORKDIR /app
-
 # Create a non-privileged user
 ARG UID=10001
 RUN adduser \
@@ -23,7 +20,11 @@ RUN adduser \
     appuser
 
 # Copy the source code into the container
-COPY . .
+ADD https://github.com/Lickitysplitted/scaling-winner.git#main:app/hello_world /app
+
+
+# Set working directory
+WORKDIR /app
 
 # Set proper ownership of the application files
 RUN chown -R appuser:appuser /app
