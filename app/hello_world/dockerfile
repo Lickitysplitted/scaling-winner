@@ -20,7 +20,7 @@ RUN adduser \
     appuser
 
 # Copy the source code into the container
-ADD https://github.com/Lickitysplitted/scaling-winner.git#main:app/hello_world /app
+ADD https://github.com/Lickitysplitted/scaling-winner.git#main /app
 
 
 # Set working directory
