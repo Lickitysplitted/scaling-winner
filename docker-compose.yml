@@ -2,7 +2,7 @@ version: "3.8"
 services:
   helloworld:
     container_name: helloworld
-    image: sha256:3d266c7dd321599c7e0f233ac00ada176e8b21299d27371c82913131c7aa9b66
+    image: sha256:fcfcad7b1958834614cbf68ecdbfaceb3d533a54a3ab6c269244471472db44d4
   nginx:
     container_name: testnginx
     image: nginx
