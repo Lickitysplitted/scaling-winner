@@ -2,7 +2,7 @@
 
 # Use the specified Python version
 ARG PYTHON_VERSION=3.11
-FROM python:${PYTHON_VERSION}-alpine
+FROM python:${PYTHON_VERSION}-alpine as base
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
