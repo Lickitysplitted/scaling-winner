@@ -24,7 +24,7 @@ ADD https://github.com/Lickitysplitted/scaling-winner.git#main:app/hello_world /
 
 
 # Set working directory
-WORKDIR /app
+WORKDIR /app/hello_world
 
 # Set proper ownership of the application files
 RUN chown -R appuser:appuser /app
@@ -33,4 +33,4 @@ RUN chown -R appuser:appuser /app
 USER appuser
 
 # Run the application
-CMD cd /app/hello_world && python -u hello_world.py
+CMD python -u hello_world.py
