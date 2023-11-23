@@ -2,6 +2,3 @@ version: "3.8"
 services:
   helloworld:
     container_name: helloworld
-    build:
-      context: https://github.com/Lickitysplitted/scaling-winner.git#main:app/hello_world
-      #dockerfile: ./app/hello_world/dockerfile
